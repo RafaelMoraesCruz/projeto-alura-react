@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import Botao from "../Botao";
+import './style.scss'
 
 function Formulario() {
     const listaTarefas = []
@@ -17,14 +18,14 @@ function Formulario() {
     }
 
   return (
-    <form>
-      <div>
+    <form className="novaTarefa">
+      <div className="inputContainer">
         <label htmlFor="tarefa">
             Adicione um novo estudo
         </label>
         <input ref={tarefa} type="text" name='tarefa' id='tarefa' placeholder="O que você quer estudar" required/>
       </div>
-      <div>
+      <div className="inputContainer">
         <label htmlFor="tempo">
             Tempo
         </label>
