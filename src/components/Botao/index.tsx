@@ -1,9 +1,9 @@
 import React from "react";
 import './style.scss'
 
-function Botao(){
+function Botao({texto} : any){
     return(
-        <button className="botao">Botão</button>
+        <button className="botao">{texto}</button>
     )
 }
 
