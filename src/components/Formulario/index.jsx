@@ -1,9 +1,8 @@
 import React from "react";
 import Botao from "../Botao";
 import "./style.scss";
-import {tarefas} from '../Lista/index'
 
-function Formulario() {
+function Formulario({setTarefas, tarefas}) {
   const [state, setState] = React.useState({
     tarefa: '',
     tempo: '00:00'
@@ -11,10 +10,12 @@ function Formulario() {
 
 
   function adicionarTarefa(evento){
+    setTarefas([...tarefas, {tarefa: state.tarefa, tempo: state.tempo}])
     setState({
       tarefa: '',
       tempo: '00:00'
     })
+    evento.preventDefault()
   }
 
   return (
@@ -45,7 +46,7 @@ function Formulario() {
           required
         />
       </div>
-      <Botao texto='Adicionar'></Botao>
+      <Botao type='submit' texto='Adicionar'></Botao>
     </form>
   );
 }
